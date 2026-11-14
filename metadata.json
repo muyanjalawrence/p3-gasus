@@ -1,0 +1,6 @@
+{
+  "name": "YEP Organisation",
+  "description": "Youth Empowerment Project — Responsive learning platform, mentorship workspace, and community portal optimized for mobile phones and laptops.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

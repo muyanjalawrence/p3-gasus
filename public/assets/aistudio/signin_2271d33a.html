@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in | YEP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="auth-page min-h-screen text-slate-800 antialiased font-sans">
+  <main class="min-h-screen flex flex-col">
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <a href="law.html" class="inline-flex items-center gap-3 group" aria-label="YEP home">
+        <span class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/25">YEP</span>
+        <span>
+          <span class="block text-lg font-extrabold text-slate-900">YEP Organisation</span>
+          <span class="block text-[11px] font-semibold text-brand-600 tracking-wider uppercase">Youth Empowerment Project</span>
+        </span>
+      </a>
+    </header>
+
+    <section class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex items-center">
+      <div class="grid lg:grid-cols-2 w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
+        <div class="auth-illustration hidden lg:flex flex-col justify-between p-12 text-white">
+          <span class="inline-flex w-fit px-3 py-1.5 rounded-full bg-white/15 text-xs font-bold uppercase tracking-wider">Your next chapter starts here</span>
+          <div>
+            <h1 class="text-4xl font-extrabold leading-tight">Welcome back to your YEP community.</h1>
+            <p class="mt-4 text-indigo-100 leading-relaxed">Pick up your learning journey, reconnect with your team, and keep building a brighter future.</p>
+          </div>
+          <p class="text-sm text-indigo-100">Learn. Lead. Make an impact.</p>
+        </div>
+
+        <div class="p-6 sm:p-10 lg:p-12">
+          <a href="law.html" class="text-sm font-semibold text-slate-500 hover:text-brand-700">&larr; Back to home</a>
+          <div class="mt-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Member access</span>
+            <h2 class="mt-2 text-3xl font-extrabold text-slate-900">Sign in</h2>
+            <p class="mt-2 text-sm text-slate-600">Enter your details to continue to the YEP workspace.</p>
+          </div>
+
+          <form id="signInForm" class="mt-8 space-y-5">
+            <label class="block text-sm font-semibold text-slate-700">Email address
+              <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <label class="block text-sm font-semibold text-slate-700">Password
+              <input name="password" type="password" autocomplete="current-password" required class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-500/20 transition">Sign in</button>
+          </form>
+
+          <p id="authMessage" role="status" aria-live="polite" class="hidden mt-5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900"></p>
+          <p class="mt-6 text-center text-sm text-slate-600">New to YEP? <a href="signup.html" class="font-bold text-brand-700 hover:text-brand-900">Create an account</a></p>
+          <p class="mt-5 text-xs leading-relaxed text-slate-500">Prototype only: credentials are not sent or saved. A secure authentication service is needed for real accounts.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./auth.js"></script>
+</body>
+</html>

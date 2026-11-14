@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an account | YEP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="auth-page min-h-screen text-slate-800 antialiased font-sans">
+  <main class="min-h-screen flex flex-col">
+    <header class="w-full max-w-7xl mx-auto px-4 sm:px-6 py-6">
+      <a href="law.html" class="inline-flex items-center gap-3 group" aria-label="YEP home">
+        <span class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/25">YEP</span>
+        <span>
+          <span class="block text-lg font-extrabold text-slate-900">YEP Organisation</span>
+          <span class="block text-[11px] font-semibold text-brand-600 tracking-wider uppercase">Youth Empowerment Project</span>
+        </span>
+      </a>
+    </header>
+
+    <section class="flex-1 w-full max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 flex items-center">
+      <div class="grid lg:grid-cols-2 w-full bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-xl">
+        <div class="auth-illustration hidden lg:flex flex-col justify-between p-12 text-white">
+          <span class="inline-flex w-fit px-3 py-1.5 rounded-full bg-white/15 text-xs font-bold uppercase tracking-wider">Join the YEP community</span>
+          <div>
+            <h1 class="text-4xl font-extrabold leading-tight">Make room for what you can become.</h1>
+            <p class="mt-4 text-indigo-100 leading-relaxed">Connect with mentors, join learning programs, and work with others to make a positive impact.</p>
+          </div>
+          <p class="text-sm text-indigo-100">Learn. Lead. Make an impact.</p>
+        </div>
+
+        <div class="p-6 sm:p-10 lg:p-12">
+          <a href="law.html" class="text-sm font-semibold text-slate-500 hover:text-brand-700">&larr; Back to home</a>
+          <div class="mt-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-brand-600">Get started</span>
+            <h2 class="mt-2 text-3xl font-extrabold text-slate-900">Create an account</h2>
+            <p class="mt-2 text-sm text-slate-600">Join YEP and start your learning journey.</p>
+          </div>
+
+          <form id="signUpForm" class="mt-8 space-y-4">
+            <label class="block text-sm font-semibold text-slate-700">Full name
+              <input name="name" type="text" autocomplete="name" required placeholder="Your name" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <label class="block text-sm font-semibold text-slate-700">Email address
+              <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <label class="block text-sm font-semibold text-slate-700">I’m joining as
+              <select name="role" required class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+                <option value="youth">Youth participant</option>
+                <option value="mentor">Mentor</option>
+                <option value="facilitator">Facilitator</option>
+                <option value="administrator">Administrator (demo preview only)</option>
+              </select>
+            </label>
+            <p class="text-xs leading-relaxed text-slate-500">Your selection opens that role’s dashboard preview. Administrator access is for preview only; real administrator roles must be approved.</p>
+            <label class="block text-sm font-semibold text-slate-700">Create a password
+              <input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <label class="block text-sm font-semibold text-slate-700">Confirm password
+              <input id="passwordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="8" required placeholder="Enter your password again" class="mt-1.5 w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm font-normal">
+            </label>
+            <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-500/20 transition">Create account</button>
+          </form>
+
+          <p id="authMessage" role="status" aria-live="polite" class="hidden mt-5 p-3 rounded-xl bg-amber-50 border border-amber-200 text-sm text-amber-900"></p>
+          <p class="mt-6 text-center text-sm text-slate-600">Already have an account? <a href="signin.html" class="font-bold text-brand-700 hover:text-brand-900">Sign in</a></p>
+          <p class="mt-5 text-xs leading-relaxed text-slate-500">Prototype only: no account is created and credentials are not sent or saved. Real accounts and administrator permissions require a secure, authorized backend.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="./auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.auth-page {
+  background:
+    radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.12), transparent 30rem),
+    radial-gradient(circle at 90% 85%, rgba(16, 185, 129, 0.1), transparent 28rem),
+    #f8fafc;
+}
+
+.auth-illustration {
+  background: linear-gradient(145deg, #312e81, #4f46e5 58%, #10b981);
+}

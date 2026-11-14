@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YEP — Youth Empowerment Project | Inspiring Tomorrow's Leaders</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <script src="./tailwind.config.js"></script>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans selection:bg-brand-500 selection:text-white">
+
+  <!-- ================= TOP NOTICE BANNER ================= -->
+  <div class="bg-gradient-to-r from-brand-700 via-brand-600 to-indigo-700 text-white text-xs md:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2">
+    <span class="inline-block px-2 py-0.5 bg-white/20 rounded-full text-xs font-semibold uppercase tracking-wider">Announcement</span>
+    <span>Spring 2026 Youth Leadership Applications are officially open!</span>
+    <a href="#programs" class="underline underline-offset-2 hover:text-brand-100 font-semibold ml-1">Apply now &rarr;</a>
+  </div>
+
+  <!-- ================= NAVIGATION ================= -->
+  <nav class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white font-extrabold text-xl shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
+          YEP
+        </div>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 block leading-tight">YEP Organisation</span>
+          <span class="text-[11px] font-semibold text-brand-600 tracking-wider uppercase block">Youth Empowerment Project</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+        <a href="#about" class="hover:text-brand-600 transition-colors">About Us</a>
+        <a href="#app" class="hover:text-brand-600 transition-colors">Portal</a>
+        <a href="#programs" class="hover:text-brand-600 transition-colors">Programs</a>
+        <a href="#impact" class="hover:text-brand-600 transition-colors">Our Impact</a>
+        <a href="#events" class="hover:text-brand-600 transition-colors">Events</a>
+        <a href="#system-design" class="hover:text-brand-600 transition-colors">System Design</a>
+        <a href="#donate" class="hover:text-brand-600 transition-colors">Donate</a>
+        <a href="#faq" class="hover:text-brand-600 transition-colors">FAQ</a>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="signin.html" class="px-3 py-2.5 text-sm font-semibold text-slate-700 hover:text-brand-600 rounded-xl transition">Sign in</a>
+        <a href="signup.html" class="px-4 py-2.5 text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl transition">Create account</a>
+        <a href="#app" class="px-4 py-2.5 text-sm font-bold text-brand-700 bg-brand-50 hover:bg-brand-100 rounded-xl transition">Open YEP Portal</a>
+        <button data-open-modal="volunteerModal" class="px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-brand-600 hover:bg-slate-100 rounded-xl transition">
+          Volunteer
+        </button>
+        <a href="#donate" class="px-5 py-2.5 text-sm font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md shadow-brand-500/20 hover:shadow-lg hover:shadow-brand-500/30 transition transform hover:-translate-y-0.5">
+          Support YEP &hearts;
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button id="mobileMenuBtn" aria-label="Toggle Menu" class="md:hidden p-2 rounded-lg text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobileMenu" class="hidden md:hidden border-b border-slate-200 bg-white px-6 py-6 space-y-4">
+      <a href="#about" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>About Us</a>
+      <a href="#app" class="block text-base font-semibold text-brand-700 hover:text-brand-600" data-mobile-link>Open YEP Portal</a>
+      <a href="#programs" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>Programs</a>
+      <a href="#impact" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>Our Impact</a>
+      <a href="#events" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>Events</a>
+      <a href="#system-design" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>System Design</a>
+      <a href="#donate" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>Donate</a>
+      <a href="#faq" class="block text-base font-semibold text-slate-700 hover:text-brand-600" data-mobile-link>FAQ</a>
+      <div class="pt-4 border-t border-slate-100 flex flex-col gap-2">
+        <a href="signin.html" data-mobile-link class="block w-full py-2.5 text-center font-bold text-brand-700 bg-brand-50 rounded-xl">Sign in</a>
+        <a href="signup.html" data-mobile-link class="block w-full py-2.5 text-center font-bold text-white bg-brand-600 rounded-xl">Create account</a>
+        <button data-open-modal="volunteerModal" data-mobile-link class="w-full py-2.5 text-center font-bold text-slate-800 bg-slate-100 rounded-xl">Volunteer</button>
+        <a href="#donate" data-mobile-link class="w-full py-2.5 text-center font-bold text-white bg-brand-600 rounded-xl shadow">Support YEP</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32 overflow-hidden bg-gradient-to-b from-brand-50/50 via-white to-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-100/70 border border-brand-200 text-brand-700 text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+            Empowering Youth • Transforming Futures
+          </div>
+          
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+            Unlocking Potential in Every <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 to-indigo-600">Young Changemaker</span>.
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            YEP is a community-driven organisation dedicated to mentoring, educating, and upskilling youth aged 14–25. We bridge opportunity gaps so every young person can lead with purpose and confidence.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="#programs" class="w-full sm:w-auto px-8 py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg shadow-brand-500/25 transition transform hover:-translate-y-0.5 text-center">
+              Explore Programs &rarr;
+            </a>
+            <a href="#app" class="w-full sm:w-auto px-8 py-3.5 bg-white border border-slate-300 hover:border-slate-400 text-slate-800 font-bold rounded-xl hover:bg-slate-50 transition text-center">Open the YEP workspace</a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-6 border-t border-slate-200 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-500 font-medium">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              Registered 501(c)(3) Non-Profit
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              GuideStar Platinum Transparency
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+              100% Free for Underserved Youth
+            </span>
+          </div>
+        </div>
+
+        <!-- Hero Card / Graphic Visual -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md bg-white rounded-3xl p-6 sm:p-8 shadow-2xl border border-slate-100">
+            <!-- Decorative Accent Circle -->
+            <div class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-tr from-brand-400 to-indigo-400 rounded-full blur-2xl opacity-40"></div>
+
+            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+              <div>
+                <p class="text-xs uppercase font-bold text-slate-400">Featured Spotlight</p>
+                <h3 class="text-xl font-extrabold text-slate-900">NextGen Tech Fellowship</h3>
+              </div>
+              <span class="px-3 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full">Cohorts 2026</span>
+            </div>
+
+            <div class="py-6 space-y-4">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 font-bold text-lg">01</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Tech & Coding Bootcamps</h4>
+                  <p class="text-xs text-slate-500">AI fundamentals, Python & Web Development</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-600 font-bold text-lg">02</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">1-on-1 Executive Mentorship</h4>
+                  <p class="text-xs text-slate-500">Matched with industry mentors from top companies</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-600 font-bold text-lg">03</div>
+                <div>
+                  <h4 class="font-bold text-slate-800 text-sm">Paid Summer Internships</h4>
+                  <p class="text-xs text-slate-500">Real-world experience with community impact</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Bottom CTA -->
+            <div class="p-4 bg-slate-50 rounded-2xl flex items-center justify-between">
+              <div>
+                <p class="text-xs font-semibold text-slate-500">Next Cohort Starts</p>
+                <p class="text-sm font-extrabold text-slate-900">July 15, 2026</p>
+              </div>
+              <a href="#programs" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-xs font-bold rounded-lg transition">Apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= YEP WEB APPLICATION ================= -->
+  <section id="app" class="py-16 sm:py-20 bg-slate-100 border-y border-slate-200 scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-5 mb-8">
+        <div><span class="text-brand-600 font-bold uppercase tracking-wider text-xs">YEP learning platform</span><h2 id="workspaceTitle" class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Your YEP workspace</h2><p id="workspaceDescription" class="text-slate-600 mt-2 max-w-2xl">Explore exchanges, join a mixed-level team, build an impact project, and keep up with assessments and messages.</p></div>
+        <div class="flex flex-wrap items-center gap-3"><label for="roleSelect" class="text-sm font-bold text-slate-700">View as</label><select id="roleSelect"  class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-800"><option value="youth">Youth participant</option><option value="mentor">Mentor</option><option value="facilitator">Facilitator</option><option value="administrator">Administrator</option></select><button data-reset-app class="px-4 py-2.5 rounded-xl border border-slate-300 bg-white text-sm font-semibold text-slate-700 hover:bg-slate-50">Reset demo</button></div>
+      </div>
+      <div class="rounded-3xl bg-white border border-slate-200 shadow-sm overflow-hidden">
+        <div class="bg-slate-900 text-white px-5 sm:px-8 py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3"><div><p class="text-xs text-brand-200 font-bold uppercase tracking-wider">Signed in · Demo workspace</p><h3 id="appWelcome" class="text-xl font-extrabold mt-1">Welcome, Jordan</h3></div><span class="inline-flex items-center gap-2 text-xs font-semibold text-slate-300"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> Changes save in this browser</span></div>
+        <div class="grid lg:grid-cols-[220px_1fr] min-h-[560px]">
+          <aside class="border-b lg:border-b-0 lg:border-r border-slate-200 p-4 sm:p-5"><p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-3 mb-2">Workspace</p><div id="appNav" class="space-y-1"></div><div class="mt-6 p-4 rounded-2xl bg-brand-50"><p class="text-xs font-bold text-brand-800">Education pathway</p><p class="text-sm text-brand-900 mt-1">A Level <span class="text-brand-600">· Level 2</span></p><div class="h-1.5 rounded-full bg-brand-100 mt-3"><div class="h-1.5 w-2/3 rounded-full bg-brand-500"></div></div></div></aside>
+          <div class="p-5 sm:p-8">
+            <div id="appStats" class="grid grid-cols-2 xl:grid-cols-4 gap-3 mb-7"></div>
+            <div id="appContent"></div>
+          </div>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500 mt-4 text-center">Interactive front-end prototype. Accounts, authentication, and shared records require a server and database before real users can access this platform.</p>
+    </div>
+  </section>
+
+  <!-- ================= LIVE IMPACT COUNTER ================= -->
+  <section class="bg-brand-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center divide-y lg:divide-y-0 lg:divide-x divide-brand-800">
+        <div class="pt-4 lg:pt-0">
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">28,500+</p>
+          <p class="text-brand-200 text-sm font-medium mt-1">Youth Reached & Empowered</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <p class="text-3xl sm:text-4xl font-extrabold text-accent-500">94.8%</p>
+          <p class="text-brand-200 text-sm font-medium mt-1">High School Graduation Rate</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">1,400+</p>
+          <p class="text-brand-200 text-sm font-medium mt-1">Active Volunteer Mentors</p>
+        </div>
+        <div class="pt-4 lg:pt-0">
+          <p class="text-3xl sm:text-4xl font-extrabold text-accent-amber">$3.2M</p>
+          <p class="text-brand-200 text-sm font-medium mt-1">Scholarships & Micro-Grants Awarded</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT SECTION & MISSION ================= -->
+  <section id="about" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">Our Core Foundation</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Why YEP Exists</h2>
+        <p class="text-slate-600 text-base sm:text-lg mt-4">
+          Talent is universally distributed, but opportunity is not. We provide safe spaces, rigorous academic support, and career readiness to help youth break cycles of poverty and thrive.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Pillar 1 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-xl transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:scale-110 transition-transform">
+            📚
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Academic Excellence</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Free one-on-one after-school tutoring, college prep workshops, SAT/ACT assistance, and direct application mentorship to ensure higher education is within reach.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-xl transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:scale-110 transition-transform">
+            💼
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Workforce & Apprenticeship</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Hands-on technical certifications, resume polish, mock interviews, and subsidized corporate apprenticeships connecting young talent directly to living-wage careers.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:border-brand-200 hover:shadow-xl transition-all duration-300 group">
+          <div class="w-14 h-14 rounded-2xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:scale-110 transition-transform">
+            🌱
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Leadership & Civic Voice</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Empowering youth to design community service projects, speak at municipal policy forums, and champion neighborhood-led environmental and social initiatives.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMS SECTION WITH TABS ================= -->
+  <section id="programs" class="py-20 bg-slate-50 border-t border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">Transformational Pathways</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Our Signature Programs</h2>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2 mt-6 md:mt-0" id="filterContainer">
+          <button data-program-filter="all" class="program-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white transition">All</button>
+          <button data-program-filter="tech" class="program-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 transition border border-slate-200">Tech & Skills</button>
+          <button data-program-filter="mentorship" class="program-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 transition border border-slate-200">Mentorship</button>
+          <button data-program-filter="arts" class="program-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 hover:bg-slate-100 transition border border-slate-200">Arts & Media</button>
+        </div>
+      </div>
+
+      <!-- Program Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Program 1 -->
+        <div class="program-card tech bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition">
+          <div class="h-44 rounded-2xl bg-gradient-to-tr from-brand-600 to-indigo-500 mb-6 flex flex-col justify-end p-5 text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider bg-black/30 w-max px-2.5 py-1 rounded-md mb-1">Ages 16–24</span>
+            <h4 class="text-lg font-bold">YEP Code & AI Academy</h4>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">
+            A 16-week immersive boot camp teaching software development, generative AI tools, and professional project portfolios.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <span class="text-xs font-bold text-accent-600">● 100% Free Tuition</span>
+            <button data-open-modal="applyModal" class="text-xs font-bold text-brand-600 hover:text-brand-800">Learn More &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="program-card mentorship bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition">
+          <div class="h-44 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 mb-6 flex flex-col justify-end p-5 text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider bg-black/30 w-max px-2.5 py-1 rounded-md mb-1">Ages 12–18</span>
+            <h4 class="text-lg font-bold">Big Horizons 1:1 Mentoring</h4>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">
+            Pairs youth with vetted community leaders and professionals for weekly guidance, emotional support, and goal setting.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <span class="text-xs font-bold text-emerald-600">● Year-Round Enrollment</span>
+            <button data-open-modal="applyModal" class="text-xs font-bold text-brand-600 hover:text-brand-800">Learn More &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="program-card arts bg-white rounded-3xl p-6 border border-slate-100 shadow-sm hover:shadow-lg transition">
+          <div class="h-44 rounded-2xl bg-gradient-to-tr from-amber-500 to-rose-500 mb-6 flex flex-col justify-end p-5 text-white">
+            <span class="text-xs font-semibold uppercase tracking-wider bg-black/30 w-max px-2.5 py-1 rounded-md mb-1">Ages 14–22</span>
+            <h4 class="text-lg font-bold">Creative Media Lab</h4>
+          </div>
+          <p class="text-slate-600 text-sm mb-4">
+            Podcasting, digital music production, filmmaking, and photography studio equipped with professional industry gear.
+          </p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+            <span class="text-xs font-bold text-amber-600">● Studio Access Included</span>
+            <button data-open-modal="applyModal" class="text-xs font-bold text-brand-600 hover:text-brand-800">Learn More &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OUR IMPACT / STORIES ================= -->
+  <section id="impact" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">Stories of Change</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Voices of YEP Alumni</h2>
+        <p class="text-slate-600 text-base sm:text-lg mt-3">
+          Behind every statistic is a young person who transformed their future with dedication and the right support.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Story 1 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+            "Before YEP, I had never written a single line of code and didn't believe I could go to college. Through the Code Academy and my mentor Carlos, I graduated with a scholarship and now work as a Jr. Cloud Engineer."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center text-sm">
+              MJ
+            </div>
+            <div>
+              <h5 class="font-bold text-slate-900 text-sm">Marcus Johnson</h5>
+              <p class="text-xs text-slate-500">YEP Class of '24 • Software Engineer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+            "The 1:1 mentorship provided a steady anchor when my family faced eviction. YEP didn't just help me study; they helped me believe I was worthy of big dreams."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-emerald-600 text-white font-bold flex items-center justify-center text-sm">
+              AL
+            </div>
+            <div>
+              <h5 class="font-bold text-slate-900 text-sm">Amina Layla</h5>
+              <p class="text-xs text-slate-500">YEP Class of '23 • Pre-Law Scholar</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3 -->
+        <div class="p-8 rounded-3xl bg-slate-50 border border-slate-100 flex flex-col justify-between">
+          <p class="text-slate-700 italic text-sm leading-relaxed mb-6">
+            "In the Creative Media Lab, I found my voice. My documentary on food justice won an award at the Youth Film Festival and received a grant to help our local community garden."
+          </p>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center text-sm">
+              DK
+            </div>
+            <div>
+              <h5 class="font-bold text-slate-900 text-sm">David Kim</h5>
+              <p class="text-xs text-slate-500">YEP Class of '25 • Multimedia Creator</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE DONATION SECTION ================= -->
+  <section id="donate" class="py-20 bg-gradient-to-br from-brand-900 via-indigo-950 to-slate-900 text-white relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="px-3.5 py-1.5 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider">Invest In Human Potential</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-3">Fuel a Young Person's Ambition</h2>
+        <p class="text-brand-200 mt-2 text-sm sm:text-base">Every contribution directly funds student stipends, tutoring supplies, and tech equipment.</p>
+      </div>
+
+      <div class="bg-white text-slate-900 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <!-- Frequency Selector -->
+        <div class="flex p-1 bg-slate-100 rounded-2xl max-w-xs mx-auto mb-8">
+          <button id="btnMonthly" data-frequency="monthly" class="flex-1 py-2 text-xs sm:text-sm font-bold rounded-xl bg-brand-600 text-white transition">Monthly Giving</button>
+          <button id="btnOnetime" data-frequency="onetime" class="flex-1 py-2 text-xs sm:text-sm font-bold rounded-xl text-slate-600 hover:text-slate-900 transition">One-Time</button>
+        </div>
+
+        <!-- Amount Buttons -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <button  class="donation-btn py-3 rounded-2xl border-2 border-slate-200 hover:border-brand-600 font-extrabold text-lg text-slate-800 transition" data-amount="25">$25</button>
+          <button  class="donation-btn py-3 rounded-2xl border-2 border-brand-600 bg-brand-50 text-brand-700 font-extrabold text-lg transition" data-amount="50">$50</button>
+          <button  class="donation-btn py-3 rounded-2xl border-2 border-slate-200 hover:border-brand-600 font-extrabold text-lg text-slate-800 transition" data-amount="100">$100</button>
+          <button  class="donation-btn py-3 rounded-2xl border-2 border-slate-200 hover:border-brand-600 font-extrabold text-lg text-slate-800 transition" data-amount="250">$250</button>
+        </div>
+
+        <!-- Custom Input -->
+        <div class="relative mb-6">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">$</span>
+          <input type="number" id="customAmount" placeholder="Or enter custom amount" class="w-full pl-9 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 font-medium text-sm"  />
+        </div>
+
+        <!-- Dynamic Impact Description -->
+        <div class="p-4 bg-brand-50/70 border border-brand-100 rounded-2xl text-center mb-8">
+          <p id="impactMessage" class="text-sm text-brand-800 font-medium">
+            Your gift of <span class="font-extrabold">$50/month</span> provides 1-on-1 weekly tutoring & study materials for an aspiring college student.
+          </p>
+        </div>
+
+        <!-- Checkout Action Button -->
+        <button data-donation-submit class="w-full py-4 bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-base rounded-2xl shadow-lg shadow-brand-500/30 transition transform hover:-translate-y-0.5">
+          Proceed to Secure Donation &rarr;
+        </button>
+
+        <p class="text-center text-xs text-slate-400 mt-4">
+          🔒 Secure 256-bit SSL encrypted donation • Tax-deductible under 501(c)(3)
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= UPCOMING EVENTS ================= -->
+  <section id="events" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12">
+        <div>
+          <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">Community Calendar</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Upcoming Events & Workshops</h2>
+        </div>
+        <p class="text-slate-500 text-sm mt-2 sm:mt-0">Open to youth and community supporters</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Event 1 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-brand-100 text-brand-700 rounded-lg font-bold text-xs">April 18, 2026</span>
+            <span class="text-xs text-slate-500">10:00 AM – 2:00 PM</span>
+          </div>
+          <h4 class="font-extrabold text-slate-900 text-lg mb-2">Youth Tech Hackathon 2026</h4>
+          <p class="text-slate-600 text-sm mb-4">A friendly beginner-oriented competition solving local urban challenges with code.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs">
+            <span class="text-slate-500">📍 YEP Innovation Lab & Virtual</span>
+            <button data-rsvp="Youth Tech Hackathon 2026" class="font-bold text-brand-600 hover:text-brand-800">RSVP Free</button>
+          </div>
+        </div>
+
+        <!-- Event 2 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 rounded-lg font-bold text-xs">May 02, 2026</span>
+            <span class="text-xs text-slate-500">1:00 PM – 4:00 PM</span>
+          </div>
+          <h4 class="font-extrabold text-slate-900 text-lg mb-2">Resume & Career Networking Mixer</h4>
+          <p class="text-slate-600 text-sm mb-4">Meet recruiters from partner tech, design, and healthcare enterprises.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs">
+            <span class="text-slate-500">📍 Downtown Civic Center</span>
+            <button data-rsvp="Career Networking Mixer" class="font-bold text-brand-600 hover:text-brand-800">RSVP Free</button>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-md transition">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="px-3 py-1 bg-amber-100 text-amber-700 rounded-lg font-bold text-xs">June 12, 2026</span>
+            <span class="text-xs text-slate-500">6:30 PM – 9:00 PM</span>
+          </div>
+          <h4 class="font-extrabold text-slate-900 text-lg mb-2">Annual YEP Gala & Awards</h4>
+          <p class="text-slate-600 text-sm mb-4">Celebrating our youth graduating seniors and recognizing community partners.</p>
+          <div class="flex items-center justify-between pt-4 border-t border-slate-100 text-xs">
+            <span class="text-slate-500">📍 Grand Metropolitan Hall</span>
+            <button data-rsvp="Annual YEP Gala" class="font-bold text-brand-600 hover:text-brand-800">Get Tickets</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ SECTION ================= -->
+  <section id="faq" class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">Got Questions?</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="space-y-4" id="faqAccordion">
+        <!-- Item 1 -->
+        <div class="border border-slate-200 rounded-2xl p-5 cursor-pointer hover:bg-slate-50 transition" data-faq>
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-slate-900 text-base">Who is eligible to participate in YEP programs?</h4>
+            <span class="faq-icon text-slate-400 font-bold text-xl transition-transform duration-200">+</span>
+          </div>
+          <p class="faq-content hidden text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100">
+            Our programs are open to youth aged 12 to 24 from underserved and underrepresented communities. All regular academic, tech, and creative workshops are 100% free of charge.
+          </p>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="border border-slate-200 rounded-2xl p-5 cursor-pointer hover:bg-slate-50 transition" data-faq>
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-slate-900 text-base">How do I become a volunteer or mentor?</h4>
+            <span class="faq-icon text-slate-400 font-bold text-xl transition-transform duration-200">+</span>
+          </div>
+          <p class="faq-content hidden text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100">
+            Click the "Volunteer" button to fill out our quick intake form. We require a background check and a short orientation session before matching mentors with students.
+          </p>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="border border-slate-200 rounded-2xl p-5 cursor-pointer hover:bg-slate-50 transition" data-faq>
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-slate-900 text-base">Where do my donations go?</h4>
+            <span class="faq-icon text-slate-400 font-bold text-xl transition-transform duration-200">+</span>
+          </div>
+          <p class="faq-content hidden text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100">
+            Over 87 cents of every dollar goes directly into youth programming, including laptops for students, certified educators, meals during afterschool sessions, and college micro-scholarships.
+          </p>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="border border-slate-200 rounded-2xl p-5 cursor-pointer hover:bg-slate-50 transition" data-faq>
+          <div class="flex items-center justify-between">
+            <h4 class="font-bold text-slate-900 text-base">Can companies partner with YEP for corporate social responsibility?</h4>
+            <span class="faq-icon text-slate-400 font-bold text-xl transition-transform duration-200">+</span>
+          </div>
+          <p class="faq-content hidden text-sm text-slate-600 mt-3 pt-3 border-t border-slate-100">
+            Yes! We partner with leading corporations for sponsored apprenticeships, employee volunteer days, guest speaker panels, and technology donations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= YEP SYSTEM DESIGN DIAGRAMS ================= -->
+  <section id="system-design" class="py-20 bg-slate-50 border-y border-slate-200/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <span class="text-brand-600 font-bold uppercase tracking-wider text-xs">How the platform works</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-2">YEP System Design</h2>
+        <p class="text-slate-600 mt-4">A guided view of the five diagrams behind the Youth Empowerment Project platform, from user needs through the system’s data flows.</p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-2 mb-10 text-xs font-bold">
+        <a href="#design-use-cases" class="px-3 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-400">01 Use cases</a>
+        <a href="#design-classes" class="px-3 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-400">02 Class model</a>
+        <a href="#design-data" class="px-3 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-400">03 Data model</a>
+        <a href="#design-context" class="px-3 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-400">04 System context</a>
+        <a href="#design-flow" class="px-3 py-2 rounded-full bg-white border border-slate-200 text-slate-700 hover:border-brand-400">05 Process flow</a>
+      </div>
+
+      <div class="space-y-7">
+        <!-- 01 Use case diagram -->
+        <article id="design-use-cases" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div class="flex items-start gap-4 mb-6"><span class="shrink-0 w-11 h-11 rounded-2xl bg-brand-100 text-brand-700 flex items-center justify-center font-extrabold">01</span><div><p class="text-xs font-bold uppercase tracking-wider text-brand-600">UML · Use case diagram</p><h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">Who uses YEP and what they can do</h3><p class="text-sm text-slate-600 mt-2">Every role shares account, profile, and messaging tools, with additional actions based on its responsibilities.</p></div></div>
+          <div class="grid lg:grid-cols-4 gap-4">
+            <div class="rounded-2xl bg-brand-50 p-5"><h4 class="font-extrabold text-brand-900 mb-3">Youth participant</h4><ul class="space-y-2 text-sm text-slate-700"><li>Register and manage profile</li><li>Enrol in a Level 1 exchange</li><li>Join a mixed Level 2 team</li><li>Develop a project and submit assessments</li><li>View team, points, and certificate</li></ul></div>
+            <div class="rounded-2xl bg-emerald-50 p-5"><h4 class="font-extrabold text-emerald-900 mb-3">Mentor</h4><ul class="space-y-2 text-sm text-slate-700"><li>Advise teams</li><li>Review impact projects</li><li>Communicate with participants</li></ul></div>
+            <div class="rounded-2xl bg-amber-50 p-5"><h4 class="font-extrabold text-amber-900 mb-3">Facilitator</h4><ul class="space-y-2 text-sm text-slate-700"><li>Create exchange sessions</li><li>Form balanced teams by education level</li><li>Set and grade assessments</li><li>Moderate content</li></ul></div>
+            <div class="rounded-2xl bg-violet-50 p-5"><h4 class="font-extrabold text-violet-900 mb-3">Administrator</h4><ul class="space-y-2 text-sm text-slate-700"><li>Manage users and roles</li><li>Issue certificates</li><li>View platform reports</li></ul></div>
+          </div>
+          <p class="text-xs text-slate-500 mt-4">Employer and partner opportunity posting is shown as future scope in the source diagram.</p>
+        </article>
+
+        <!-- 02 Class diagram -->
+        <article id="design-classes" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div class="flex items-start gap-4 mb-6"><span class="shrink-0 w-11 h-11 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-extrabold">02</span><div><p class="text-xs font-bold uppercase tracking-wider text-indigo-600">UML · Class diagram</p><h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">The main objects and their relationships</h3><p class="text-sm text-slate-600 mt-2">Role-specific users connect activities, teams, projects, assessments, and messages.</p></div></div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="border border-brand-200 rounded-2xl overflow-hidden"><h4 class="bg-brand-600 text-white font-bold px-4 py-3">User <span class="font-normal text-brand-100">(abstract)</span></h4><div class="p-4 text-sm text-slate-600 space-y-1"><p>userId, name, email</p><p>passwordHash, country, role</p><p class="pt-2 text-slate-800">login() · logout()</p><p>getDashboard()</p></div></div>
+            <div class="border border-emerald-200 rounded-2xl overflow-hidden"><h4 class="bg-emerald-600 text-white font-bold px-4 py-3">YouthParticipant</h4><div class="p-4 text-sm text-slate-600 space-y-1"><p>age, skillLevel, points</p><p>educationLevel</p><p class="pt-2 text-slate-800">enrol() · joinTeam()</p><p>submit assessment</p></div></div>
+            <div class="border border-amber-200 rounded-2xl overflow-hidden"><h4 class="bg-amber-500 text-white font-bold px-4 py-3">Facilitator · Mentor</h4><div class="p-4 text-sm text-slate-600 space-y-1"><p>Facilitator creates sessions and teams, grades assessments.</p><p class="pt-2">Mentor advises teams and reviews projects.</p></div></div>
+            <div class="border border-violet-200 rounded-2xl overflow-hidden"><h4 class="bg-violet-600 text-white font-bold px-4 py-3">Administrator</h4><div class="p-4 text-sm text-slate-600 space-y-1"><p>adminLevel</p><p class="pt-2 text-slate-800">manageUsers()</p><p>issueCertificate()</p><p>viewReports()</p></div></div>
+          </div>
+          <div class="mt-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+            <div class="p-4 bg-slate-50 rounded-xl"><b class="text-slate-900">EducationLevel</b><p class="text-slate-600 mt-1">O Level → A Level → Diploma → Bachelor’s → Master’s → PhD</p></div>
+            <div class="p-4 bg-slate-50 rounded-xl"><b class="text-slate-900">Activity & Enrolment</b><p class="text-slate-600 mt-1">Participants enrol in scheduled exchanges.</p></div>
+            <div class="p-4 bg-slate-50 rounded-xl"><b class="text-slate-900">Team & ImpactProject</b><p class="text-slate-600 mt-1">Teams have members, a mentor, and a developing project.</p></div>
+            <div class="p-4 bg-slate-50 rounded-xl"><b class="text-slate-900">Assessment & Message</b><p class="text-slate-600 mt-1">Assessments are graded; users send and receive messages.</p></div>
+          </div>
+        </article>
+
+        <!-- 03 ER diagram -->
+        <article id="design-data" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div class="flex items-start gap-4 mb-6"><span class="shrink-0 w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-extrabold">03</span><div><p class="text-xs font-bold uppercase tracking-wider text-emerald-600">Database · Entity relationship diagram</p><h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">How YEP’s data is organised</h3><p class="text-sm text-slate-600 mt-2">Primary keys identify records; foreign keys connect related records.</p></div></div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div class="p-4 rounded-xl border-l-4 border-brand-500 bg-brand-50"><b>USER</b><p class="text-xs text-slate-600 mt-1">PK user_id · name, email, role, country, age, education_level, points · FK team_id</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-indigo-500 bg-indigo-50"><b>TEAM</b><p class="text-xs text-slate-600 mt-1">PK team_id · FK mentor_id · team_name, created_at</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-emerald-500 bg-emerald-50"><b>IMPACT_PROJECT</b><p class="text-xs text-slate-600 mt-1">PK project_id · FK team_id · title, theme, status</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-amber-500 bg-amber-50"><b>ASSESSMENT</b><p class="text-xs text-slate-600 mt-1">PK assess_id · FK user_id, evaluator_id · score, feedback, marks, status</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-sky-500 bg-sky-50"><b>ACTIVITY</b><p class="text-xs text-slate-600 mt-1">PK activity_id · title, level_type, start_date, max_spots</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-cyan-500 bg-cyan-50"><b>ENROLMENT</b><p class="text-xs text-slate-600 mt-1">PK enrolment_id · FK user_id, activity_id · enrol_date, status</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-violet-500 bg-violet-50"><b>MESSAGE</b><p class="text-xs text-slate-600 mt-1">PK msg_id · FK sender_id, receiver_id · body, sent_at, is_read</p></div>
+            <div class="p-4 rounded-xl border-l-4 border-rose-500 bg-rose-50"><b>CERTIFICATE</b><p class="text-xs text-slate-600 mt-1">PK cert_id · FK user_id, issuer_id · issue_date, cert_type</p></div>
+          </div>
+          <p class="text-xs text-slate-500 mt-4">Core links: users enrol in activities, belong to teams, submit assessments, exchange messages, and receive certificates. Teams develop impact projects.</p>
+        </article>
+
+        <!-- 04 Context DFD -->
+        <article id="design-context" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div class="flex items-start gap-4 mb-6"><span class="shrink-0 w-11 h-11 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center font-extrabold">04</span><div><p class="text-xs font-bold uppercase tracking-wider text-amber-600">Data flow · Level 0 context</p><h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">YEP as one connected system</h3><p class="text-sm text-slate-600 mt-2">The context view shows information exchanged between the platform and its four external roles.</p></div></div>
+          <div class="rounded-3xl bg-slate-900 p-5 sm:p-8 text-white">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+              <div class="bg-white/10 rounded-2xl p-4"><b>Youth participant</b><p class="text-xs text-slate-300 mt-2">Sends registration, education level, enrolments, team requests, assessments, and messages.</p></div>
+              <div class="bg-white/10 rounded-2xl p-4"><b>Mentor</b><p class="text-xs text-slate-300 mt-2">Receives team and project details; returns advice and project status decisions.</p></div>
+              <div class="bg-white/10 rounded-2xl p-4"><b>Facilitator</b><p class="text-xs text-slate-300 mt-2">Sends sessions, assessments, marks, feedback, and team-building requests.</p></div>
+              <div class="bg-white/10 rounded-2xl p-4"><b>Administrator</b><p class="text-xs text-slate-300 mt-2">Manages users and certificates; receives platform reports.</p></div>
+            </div>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-center"><span class="text-xs text-slate-300">Accounts · activities · teams · projects · assessment · messaging</span><span class="px-6 py-3 rounded-full bg-brand-600 font-extrabold">YEP System</span><span class="text-xs text-slate-300">Dashboards · team updates · scores · advice · certificates</span></div>
+          </div>
+        </article>
+
+        <!-- 05 Level 1 DFD -->
+        <article id="design-flow" class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 shadow-sm scroll-mt-28">
+          <div class="flex items-start gap-4 mb-6"><span class="shrink-0 w-11 h-11 rounded-2xl bg-rose-100 text-rose-700 flex items-center justify-center font-extrabold">05</span><div><p class="text-xs font-bold uppercase tracking-wider text-rose-600">Data flow · Level 1</p><h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">The platform’s six core processes</h3><p class="text-sm text-slate-600 mt-2">The detailed view breaks the system into work areas and the records each one uses.</p></div></div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="p-5 rounded-2xl bg-brand-50 border border-brand-100"><span class="text-xs font-extrabold text-brand-600">1.0</span><h4 class="font-extrabold text-slate-900 mt-1">Manage Accounts</h4><p class="text-sm text-slate-600 mt-2">Registration, login, dashboards, and education levels.</p><p class="text-xs font-bold text-brand-700 mt-3">D1 · Users and Education Levels</p></div>
+            <div class="p-5 rounded-2xl bg-sky-50 border border-sky-100"><span class="text-xs font-extrabold text-sky-600">2.0</span><h4 class="font-extrabold text-slate-900 mt-1">Run Virtual Exchanges</h4><p class="text-sm text-slate-600 mt-2">Session scheduling, enrolment requests, activity lists, and messages.</p><p class="text-xs font-bold text-sky-700 mt-3">D2 · Activities and Enrolments</p></div>
+            <div class="p-5 rounded-2xl bg-emerald-50 border border-emerald-100"><span class="text-xs font-extrabold text-emerald-600">3.0</span><h4 class="font-extrabold text-slate-900 mt-1">Form Mixed-Level Teams & Projects</h4><p class="text-sm text-slate-600 mt-2">Team requests, education-level balancing, project details, and status.</p><p class="text-xs font-bold text-emerald-700 mt-3">D3 · Teams and Projects</p></div>
+            <div class="p-5 rounded-2xl bg-amber-50 border border-amber-100"><span class="text-xs font-extrabold text-amber-600">4.0</span><h4 class="font-extrabold text-slate-900 mt-1">Assess & Reward Youth</h4><p class="text-sm text-slate-600 mt-2">Assessment submissions, marks, feedback, scores, and points.</p><p class="text-xs font-bold text-amber-700 mt-3">D4 · Assessments and Points</p></div>
+            <div class="p-5 rounded-2xl bg-violet-50 border border-violet-100"><span class="text-xs font-extrabold text-violet-600">5.0</span><h4 class="font-extrabold text-slate-900 mt-1">Issue Certificates & Reports</h4><p class="text-sm text-slate-600 mt-2">Certificate requests, issued certificates, and administrative reports.</p><p class="text-xs font-bold text-violet-700 mt-3">Administrator · Mentor</p></div>
+            <div class="p-5 rounded-2xl bg-rose-50 border border-rose-100"><span class="text-xs font-extrabold text-rose-600">6.0</span><h4 class="font-extrabold text-slate-900 mt-1">Messaging & Moderation</h4><p class="text-sm text-slate-600 mt-2">Participant messaging and facilitator content moderation.</p><p class="text-xs font-bold text-rose-700 mt-3">D5 · Messages</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= VOLUNTEER / CONTACT MODAL ================= -->
+  <div id="volunteerModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative">
+      <button data-close-modal="volunteerModal" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+      <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Get Involved with YEP</h3>
+      <p class="text-slate-600 text-sm mb-6">Join our network of passionate mentors, tutors, and event volunteers.</p>
+
+      <form id="volunteerForm" data-demo-form data-modal="volunteerModal" data-success-message="Thank you! A YEP coordinator will be in touch within 48 hours." class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Full Name</label>
+          <input type="text" required placeholder="Alex Morgan" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Email Address</label>
+          <input type="email" required placeholder="alex@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Area of Interest</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white">
+            <option>1-on-1 Youth Mentorship</option>
+            <option>Academic Tutoring (STEM / Humanities)</option>
+            <option>Tech & Coding Workshop Instructor</option>
+            <option>Event Planning & Operations</option>
+            <option>Corporate Partnership</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Tell us briefly about your background</label>
+          <textarea rows="3" placeholder="Share your experience and motivation..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition">
+          Submit Application
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= PROGRAM APPLICATION MODAL ================= -->
+  <div id="applyModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-8 shadow-2xl relative">
+      <button data-close-modal="applyModal" class="absolute top-6 right-6 text-slate-400 hover:text-slate-700 text-2xl font-bold">&times;</button>
+      <h3 class="text-2xl font-extrabold text-slate-900 mb-2">Program Registration</h3>
+      <p class="text-slate-600 text-sm mb-6">Enroll in a free YEP program or request additional information.</p>
+
+      <form data-demo-form data-modal="applyModal" data-success-message="Registration received! Check your inbox for the welcome pack." class="space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Student / Applicant Name</label>
+          <input type="text" required placeholder="Jordan Smith" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Email Address</label>
+          <input type="email" required placeholder="jordan@example.com" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-600 mb-1">Select Desired Program</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm bg-white">
+            <option>YEP Code & AI Academy</option>
+            <option>Big Horizons 1:1 Mentoring</option>
+            <option>Creative Media Lab</option>
+            <option>College Readiness & SAT Prep</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition">
+          Confirm Interest
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= TOAST NOTIFICATION ================= -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-2xl flex items-center gap-3 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+    <span class="text-emerald-400 font-bold">✓</span>
+    <span id="toastMsg" class="text-sm font-semibold">Action completed successfully.</span>
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-slate-900 text-slate-400 pt-16 pb-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+        <div class="col-span-2">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-extrabold text-lg">YEP</div>
+            <span class="text-xl font-extrabold text-white">YEP Organisation</span>
+          </div>
+          <p class="text-sm text-slate-400 max-w-sm mb-6">
+            Empowering youths through education, technology, mentorship, and creative arts to build equitable communities.
+          </p>
+          <p class="text-xs text-slate-500">
+            YEP is a registered 501(c)(3) nonprofit organisation. All contributions are tax-deductible to the extent allowed by law.
+          </p>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Quick Links</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#programs" class="hover:text-white transition">Programs</a></li>
+            <li><a href="#impact" class="hover:text-white transition">Our Impact</a></li>
+            <li><a href="#events" class="hover:text-white transition">Events</a></li>
+            <li><a href="#donate" class="hover:text-white transition">Donate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Programs</h5>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#programs" class="hover:text-white transition">Code & AI Academy</a></li>
+            <li><a href="#programs" class="hover:text-white transition">1:1 Mentoring</a></li>
+            <li><a href="#programs" class="hover:text-white transition">Creative Media Lab</a></li>
+            <li><a href="#programs" class="hover:text-white transition">Career Apprenticeship</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="text-white font-bold text-sm mb-4">Stay Connected</h5>
+          <p class="text-xs text-slate-400 mb-3">Subscribe to our monthly newsletter for stories & events.</p>
+          <form data-demo-form data-success-message="Subscribed! Welcome to the YEP family." class="space-y-2">
+            <input type="email" required placeholder="Your email address" class="w-full px-3 py-2 bg-slate-800 border border-slate-700 rounded-lg text-xs text-white placeholder-slate-500 focus:outline-none focus:ring-1 focus:ring-brand-500" />
+            <button type="submit" class="w-full py-2 bg-brand-600 hover:bg-brand-500 text-white rounded-lg text-xs font-bold transition">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <p>&copy; 2026 Youth Empowerment Project (YEP). All rights reserved.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+          <a href="#" class="hover:text-slate-400">Financial Reports</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./law.js"></script>
+</body>
+</html>
